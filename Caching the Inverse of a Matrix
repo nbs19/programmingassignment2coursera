@@ -1,14 +1,14 @@
   makecachematrix <- function(p = matrix())
 {
-  inv <- NULL
+  in <- NULL
   set <- function(q)
   {
     p <<- q
-    inv <<- NULL
+    in <<- NULL
   }
   get <- function() p
-  si <- function(sm) inv <<- sm
-  gi<- function() inv
+  si <- function(sm) in <<- sm
+  gi<- function() in
   list(set = set, get = get, si = si, gi= gi)
 }
 
