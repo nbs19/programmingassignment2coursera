@@ -1,0 +1,13 @@
+cachesolve <- function(x, ...) 
+{
+  in <- x$gi()
+  if(!is.null(in))
+  {
+    message("cached data")
+    return(in)
+  }
+  data <- x$get()
+  in <- solve(data)
+  x$si(in)
+  in      
+}
