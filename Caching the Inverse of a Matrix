@@ -12,16 +12,16 @@
   list(set = set, get = get, si = si, gi= gi)
 }
 
-cachesolve <- function(x, ...) 
+cachesolve <- function(p, ...) 
 {
-  in <- x$gi()
+  in <- p$gi()
   if(!is.null(in))
   {
     message("cached data")
     return(in)
   }
-  data <- x$get()
+  data <- p$get()
   in <- solve(data)
-  x$si(in)
+  p$si(in)
   in      
 }
